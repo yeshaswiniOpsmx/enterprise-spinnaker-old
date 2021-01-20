@@ -1,51 +1,22 @@
 apiVersion: v1
 entries:
-  OpsMx:
-  - apiVersion: v1
-    appVersion: 1.0.1
-    created: "2020-06-18T18:56:53.9232669+05:30"
+  oes:
+  - apiVersion: v2
+    appVersion: 3.4.0
+    created: "2021-01-20T08:20:02.786274012Z"
     dependencies:
     - condition: installOpenLdap
       name: openldap
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      version: ~1.2.1
+      repository: ""
+      version: 1.2.3
     - condition: installSpinnaker
       name: spinnaker
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      version: ~1.20.2
-    - condition: enableCentralLogging
-      name: elasticsearch
-      repository: https://helm.elastic.co/
-      version: 7.5.0
-    - condition: enableCentralLogging
-      name: kibana
-      repository: https://helm.elastic.co
-      version: 7.5.0
-    - condition: enableCentralLogging
-      name: fluent-bit
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      version: ^1.9.0
-    digest: d6ae5bb7369e81c8b90ba3611e9a25d5d34ba78b0997fbef929642f165789ad7
-    home: https://www.opsmx.com/
-    keywords:
-    - OpsMx
-    - OES
-    name: OpsMx
-    urls:
-    - OpsMx-1.0.1.tgz
-    version: 1.0.1
-  - apiVersion: v1
-    appVersion: 1.0.0
-    created: "2020-06-18T18:56:53.8897708+05:30"
-    dependencies:
-    - condition: installOpenLdap
-      name: openldap
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      version: ~1.2.1
-    - condition: installSpinnaker
-      name: spinnaker
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      version: ~1.20.2
+      repository: ""
+      version: 2.2.3
+    - condition: installRedis
+      name: redis
+      repository: ""
+      version: 10.5.3
     - condition: enableCentralLogging
       name: elasticsearch
       repository: ""
@@ -56,15 +27,31 @@ entries:
       version: 7.5.0
     - condition: enableCentralLogging
       name: fluent-bit
-      repository: https://kubernetes-charts.storage.googleapis.com/
-      version: ^1.9.0
-    digest: f21244b9c73bba614020b8aff7822b571ca9de4e56b7cf92ba13f79480eca9be
+      repository: ""
+      version: 2.8.2
+    - condition: spinnaker.enableCentralMonitoring
+      name: prometheus
+      repository: ""
+      version: 11.16.2
+    description: OES is a non-forked version of OSS spinnaker
+    digest: 3fa325b51a176854b45a97103e85b89d3af6b6d9f56edcc8e8ce670776af980c
     home: https://www.opsmx.com/
+    icon: https://www.opsmx.com/images/logo.png
     keywords:
     - OpsMx
     - OES
-    name: OpsMx
+    - Autopilot
+    maintainers:
+    - email: abhinay.byrisetty@opsmx.io
+      name: abhinaybyrisetty
+    - email: vamsi.krishna@opsmx.io
+      name: vkvamsi
+    - email: nirmalya@opsmx.io
+      name: nirmalyasen
+    - email: srinivas@opsmx.io
+      name: ksrinimba
+    name: oes
     urls:
-    - OpsMx-1.0.0.tgz
-    version: 1.0.0
-generated: "2020-06-18T18:56:53.8508814+05:30"
+    - https://github.com/yeshaswiniOpsmx/enterprise-spinnaker/releases/download/oes-3.4.1/oes-3.4.1.tgz
+    version: 3.4.1
+generated: "2021-01-20T08:20:02.542790517Z"
